@@ -14,6 +14,8 @@ cc.Class({
         btn_my_info: { default:null, type:cc.Node },
 
         img_head: { default:null, type:cc.Node },
+
+        bombDown: { default:null, type:cc.Prefab },
     },
 
     // use this for initialization
