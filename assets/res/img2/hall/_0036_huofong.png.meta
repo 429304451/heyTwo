@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "551c4bfa-cb2c-4d22-ae15-884db91ff17b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "_0036_huofong": {
+      "ver": "1.0.3",
+      "uuid": "879d812f-7cef-47b5-a67b-ce1c52f9cd1e",
+      "rawTextureUuid": "551c4bfa-cb2c-4d22-ae15-884db91ff17b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 111,
+      "height": 54,
+      "rawWidth": 111,
+      "rawHeight": 54,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

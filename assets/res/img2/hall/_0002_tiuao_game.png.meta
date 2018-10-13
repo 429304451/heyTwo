@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "5c182ec9-db0d-4c4d-906c-f40500fc23c2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "_0002_tiuao_game": {
+      "ver": "1.0.3",
+      "uuid": "6685853b-0deb-4b03-830d-5535f21fa762",
+      "rawTextureUuid": "5c182ec9-db0d-4c4d-906c-f40500fc23c2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1036,
+      "height": 31,
+      "rawWidth": 1036,
+      "rawHeight": 31,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "13f47259-6a49-4bc3-84ee-7d30b3ca90bd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "_0016_honglanka-": {
+      "ver": "1.0.3",
+      "uuid": "583b2da8-e658-4108-85b7-814b046e9a93",
+      "rawTextureUuid": "13f47259-6a49-4bc3-84ee-7d30b3ca90bd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 53,
+      "height": 29,
+      "rawWidth": 53,
+      "rawHeight": 29,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

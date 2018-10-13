@@ -1,0 +1,87 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="hall" Type="Plist" ID="a2284a06-75ee-4a05-aacd-b869fee79a52" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="img2/hall/_0015_shangtiao.png" />
+      <FilePathData Path="img2/hall/_0000_play.png" />
+      <FilePathData Path="img2/hall/_0001_laba.png" />
+      <FilePathData Path="img2/hall/_0002_tiuao.png" />
+      <FilePathData Path="img2/hall/_0003_qidai.png" />
+      <FilePathData Path="img2/hall/_0004_huodong.png" />
+      <FilePathData Path="img2/hall/_0006_douniu.png" />
+      <FilePathData Path="img2/hall/_0008_dizhu.png" />
+      <FilePathData Path="img2/hall/_0008_dizhupo.png" />
+      <FilePathData Path="img2/hall/_0010_dizhu.png" />
+      <FilePathData Path="img2/hall/_0011_doudizhu.png" />
+      <FilePathData Path="img2/hall/_0012_paihang.png" />
+      <FilePathData Path="img2/hall/_0013_setting_icon.png" />
+      <FilePathData Path="img2/hall/_0014_youjian.png" />
+      <FilePathData Path="img2/hall/_0016_honglanka-.png" />
+      <FilePathData Path="img2/hall/_0016_yue.png" />
+      <FilePathData Path="img2/hall/_0016_zhou.png" />
+      <FilePathData Path="img2/hall/_0017_head.png" />
+      <FilePathData Path="img2/hall/_0018_zuanshi.png" />
+      <FilePathData Path="img2/hall/_0019_add.png" />
+      <FilePathData Path="img2/hall/_0020_di.png" />
+      <FilePathData Path="img2/hall/_0021_jinbi.png" />
+      <FilePathData Path="img2/hall/_0032_wan.png" />
+      <FilePathData Path="img2/hall/_0033_hongdian.png" />
+      <FilePathData Path="img2/hall/_0034_hongbao.png" />
+      <FilePathData Path="img2/hall/_0035_beibao.png" />
+      <FilePathData Path="img2/hall/_0036_huofong.png" />
+      <FilePathData Path="img2/hall/_0037_duihuan.png" />
+      <FilePathData Path="img2/hall/_0038_renwu.png" />
+      <FilePathData Path="img2/hall/_0039_shop.png" />
+      <FilePathData Path="img2/hall/_0041_xia.png" />
+      <FilePathData Path="img2/hall/btn_happy_1.png" />
+      <FilePathData Path="img2/hall/btn_happy_2.png" />
+      <FilePathData Path="img2/hall/btn_happy_3.png" />
+      <FilePathData Path="img2/hall/btn_happy_4.png" />
+      <FilePathData Path="img2/hall/hb.png" />
+      <FilePathData Path="img2/hall/jlsm.png" />
+      <FilePathData Path="img2/hall/yuan.png" />
+      <FilePathData Path="img2/hall/bbb.png" />
+      <FilePathData Path="img2/hall/zhuangquan.png" />
+      <FilePathData Path="img2/hall/10.png" />
+      <FilePathData Path="img2/hall/quan.png" />
+      <FilePathData Path="img2/hall/_0007_niuniu.png" />
+      <FilePathData Path="img2/hall/duihuan.png" />
+      <FilePathData Path="img2/hall/fksg.png" />
+      <FilePathData Path="img2/hall/brkh.png" />
+      <FilePathData Path="img2/hall/datmp.png" />
+      <FilePathData Path="img2/hall/_0043_huanlebipai_back.png" />
+      <FilePathData Path="img2/hall/_0044_huanlebipai_head.png" />
+      <FilePathData Path="img2/hall/lunbokuang.png" />
+      <FilePathData Path="img2/hall/gengduowanfa.png" />
+      <FilePathData Path="img2/hall/_0040_shang.png" />
+      <FilePathData Path="img2/hall/bairenkuanghuang1.png" />
+      <FilePathData Path="img2/hall/doudizhu1.png" />
+      <FilePathData Path="img2/hall/fengkuangshuiguo1.png" />
+      <FilePathData Path="img2/hall/gengduowanfa1.png" />
+      <FilePathData Path="img2/hall/huanlebipai1.png" />
+      <FilePathData Path="img2/hall/kanpanqiangzhuang1.png" />
+      <FilePathData Path="img2/hall/mingzilan.png" />
+      <FilePathData Path="img2/hall/quan_back.png" />
+      <FilePathData Path="img2/hall/dixia.png" />
+      <FilePathData Path="img2/hall/_0001_laba_game.png" />
+      <FilePathData Path="img2/hall/_0002_tiuao_game.png" />
+      <FilePathData Path="img2/hall/y1.png" />
+      <FilePathData Path="img2/hall/y2.png" />
+      <FilePathData Path="img2/hall/shouchong.png" />
+      <FilePathData Path="img2/hall/meirishouchong.png" />
+      <FilePathData Path="img2/hall/paihangbang.png" />
+      <FilePathData Path="img2/hall/shezhi.png" />
+      <FilePathData Path="img2/hall/chouhongbao.png" />
+      <FilePathData Path="img2/hall/xianshihuodong.png" />
+      <FilePathData Path="img2/hall/xianshihuodong_1.png" />
+      <FilePathData Path="img2/hall/zhaochaijinbao.png" />
+      <FilePathData Path="img2/hall/shouchongdalibao.jpg" />
+      <FilePathData Path="img2/hall/qianghongbao.jpg" />
+      <FilePathData Path="img2/hall/hongbaolaile.png" />
+      <FilePathData Path="img2/hall/hongbaotubiao.png" />
+      <FilePathData Path="img2/hall/fenxiangzhuanhongbao.png" />
+      <FilePathData Path="img2/hall/tuiguangzhuanmenpiao.jpg" />
+    </ImageFiles>
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>
