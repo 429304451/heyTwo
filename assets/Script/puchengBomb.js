@@ -23,7 +23,7 @@ cc.Class({
         // ### 绑定点击事件
         this.addEvents();
 
-        // this.node.setScale(3);
+        // this.node.setScale(1.2);
     },
     addEvents: function () {
 
