@@ -6,6 +6,7 @@ cc.Class({
     properties: {
         bombUpPre: { default:null, type:cc.Prefab },
         bombDownPre: { default:null, type:cc.Prefab },
+        bombFrontPre: { default:null, type:cc.Prefab },
     },
 
     // use this for initialization
@@ -20,10 +21,16 @@ cc.Class({
         this.node.addChild(bombDown, 3);
         bombDown.setPosition(0, -cc.winSize.height/2)
         this.bombDown = bombDown;
+
+        var bombFront = cc.instantiate(this.bombFrontPre);
+        this.node.addChild(bombFront, 8);
+        this.bombFront = bombFront;
         // ### 绑定点击事件
         this.addEvents();
 
         // this.node.setScale(1.2);
+
+        
     },
     addEvents: function () {
 
