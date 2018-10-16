@@ -45,23 +45,14 @@ cc.Node.prototype.pp = function(pxOrCcp, py) {
 };
 
 cc.Node.prototype.unbindTouch = function(args) {
-    this.on(cc.Node.EventType.TOUCH_START, function(event) {
+    this.off(cc.Node.EventType.TOUCH_START);
+    this.off(cc.Node.EventType.TOUCH_MOVE);
+    this.off(cc.Node.EventType.TOUCH_END);
+    this.off(cc.Node.EventType.TOUCH_CANCEL);
 
-    }, this);
-    this.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
-
-    }, this);
-    this.on(cc.Node.EventType.TOUCH_END, function(event) {
-
-    }, this);
-    // this._touchListener.swallowTouches = false;
+    this.off(cc.Node.EventType.MOUSE_ENTER);
+    this.off(cc.Node.EventType.MOUSE_LEAVE);
     return this;
-};
-
-cc.Node.prototype.bindTouch = function(args) {
-    if (!args) {
-        return this;
-    }
 };
 
 GM.pAdd = function (v1, v2) {
@@ -74,18 +65,15 @@ GM.pSub = function (v1, v2) {
 
 cc.Node.prototype.bindTouchLocate = function(pxOrCcp, py) {
     this.on(cc.Node.EventType.TOUCH_START, function(event) {
-        // console.log("TOUCH_START");
         this.lBeganPos_ = this.getPosition();
         this.lBeganPoint_ = cc.v2(event.touch._point.x, event.touch._point.y); //  event.touch._point;
     }, this);
 
     this.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
-        // console.log("TOUCH_MOVE");
         this.setPosition(GM.pAdd(this.lBeganPos_, GM.pSub(event.touch._point, this.lBeganPoint_)));
     }, this);
 
     this.on(cc.Node.EventType.TOUCH_END, function(event) {
-        // console.log("TOUCH_END");
         var pw = cc.winSize.width, ph = cc.winSize.height;
         if (this.getParent() != null) {
             var size = this.getParent().getContentSize();
@@ -96,7 +84,6 @@ cc.Node.prototype.bindTouchLocate = function(pxOrCcp, py) {
     }, this);
 
     // this._touchListener.swallowTouches = false;
-
     return this;
 };
 
@@ -152,18 +139,17 @@ cc.Node.prototype.quickBt = function(fn, touchSilence, Shield) {
     return this;
 };
 
-cc.Node.prototype.display = function(fileName) {
-    var self = this;
-    if (fileName === undefined)
-        return this.getSpriteFrame();
-    else if (typeof fileName === 'string') {
-        if (GM.hasLoadImg[fileName]) {
-            this.spriteFrame = GM.hasLoadImg[fileName];
+cc.Node.prototype.delayCall = function(func, delayTime, bRepeat) {
+    var action = cc.sequence(
+        cc.delayTime(delayTime),
+        cc.callFunc(func)
+    );
+    if (bRepeat) {
+        if (typeof bRepeat === "number") {
+            action = action.repeat(bRepeat);
         } else {
-            cc.loader.loadRes(fileName, cc.SpriteFrame, function(err, spriteFrame){ 
-                GM.hasLoadImg[fileName] = spriteFrame;
-                self._components[0].spriteFrame = spriteFrame;
-            });
+            action = action.repeatForever();
         }
-    }
+    };
+    this.runAction(action);
 };

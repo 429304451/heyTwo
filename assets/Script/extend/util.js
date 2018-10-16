@@ -1,3 +1,4 @@
+// Create by ChangWei on 2018/10/16
 require("define")
 //工具类
 var util = {};
@@ -78,6 +79,48 @@ util.SoundClick = function () {
     } else {
         cc.audioEngine.playEffect(GM.soundClickUrl, false);
     }
-}
+};
+
+util.display = function(node, fileName) {
+    if (fileName === undefined)
+        return node.getSpriteFrame();
+    else if (typeof fileName === 'string') {
+        if (GM.hasLoadImg[fileName]) {
+            node.getComponent(cc.Sprite).spriteFrame = GM.hasLoadImg[fileName];
+        } else {
+            cc.loader.loadRes(fileName, cc.SpriteFrame, function(err, spriteFrame){ 
+                GM.hasLoadImg[fileName] = spriteFrame;
+                node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+    }
+};
+// 获取后缀名
+util.getSuffixName = function(filename) {
+    var index1 = filename.lastIndexOf(".");
+    var index2 = filename.length;
+    //后缀名
+    var postf  = filename.substring(index1+1, index2);
+    return postf
+};
+// 加载网络图片 如果提示跨域请求失败让服务端处理
+util.loadUrlImg = function(node, picUrl) {
+    cc.loader.load({url: picUrl, type: util.getSuffixName(picUrl)}, function (err, texTure) {
+        let spriteFrame = new cc.SpriteFrame(texTure);
+        node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+    });
+};
+// 从父节点脱落 到新的节点去
+util.exto = function(child, father, zorder) {
+    zorder = zorder || 0;
+    var oldFather = child.getParent();
+
+    if (oldFather) {
+        child.removeFromParent(false);
+        father.addChild(child, zorder);
+    } else {
+        father.addChild(child, zorder);
+    }
+};
 
 module.exports = util;

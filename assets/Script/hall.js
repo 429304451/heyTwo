@@ -47,17 +47,22 @@ cc.Class({
         });
         this.head_id = 1;
         this.btn_my_info.quickBt(function () {
-            if (self.head_id < 7) {
-                self.head_id = self.head_id + 1;
-            } else {
-                self.head_id = 1;
-            }
-            console.log("self.head_id", self.head_id);
-            var mStr = "img2/userhead/touxiang00"+self.head_id
-            self.img_head.display("img2/userhead/touxiang00"+self.head_id);
+
+            // if (self.head_id < 4) {
+            //     self.head_id = self.head_id + 1;
+            // } else {
+            //     self.head_id = 1;
+            // }
+            // var url = "http://127.0.0.1:8888/mImg?name="+self.head_id+".jpg"
+            // util.loadUrlImg(self.img_head, url);
+
+            var cocos = cc.find("Canvas/cocos");
+            util.exto(cocos, self.img_head)
+            // self.btn_my_info.unbindTouch();
         });
 
     },
+
 
     // called every frame
     update: function (dt) {
