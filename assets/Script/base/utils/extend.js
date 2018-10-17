@@ -1,5 +1,5 @@
 // Create By ChangWei on 2018/10/11
-// 设一个全局变量 作为我开发游戏的系统
+// 定义一个全局变量 作为我开发游戏的常用管理
 window.GM = {}
 GM.hasLoadImg = {};
 
@@ -115,7 +115,7 @@ cc.Node.prototype.quickBt = function(fn, touchSilence, Shield) {
             this.opacity = this.BeganOpacity_;
 
             if (GM.soundClickUrl == null){
-                cc.loader.loadRes("audio/Common_Panel_Dialog_Pop_Sound", cc.AudioClip, function (err, clip) {
+                cc.loader.loadRes("audio/common/Common_Panel_Dialog_Pop_Sound", cc.AudioClip, function (err, clip) {
                     cc.audioEngine.playEffect(clip, false);
                     GM.soundClickUrl = clip
                 });

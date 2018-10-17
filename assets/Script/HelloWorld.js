@@ -1,4 +1,3 @@
-var util = require("util");
 
 cc.Class({
     extends: cc.Component,

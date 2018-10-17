@@ -1,5 +1,5 @@
 // Create by ChangWei on 2018/10/16
-require("define")
+require("extend")
 //工具类
 var util = {};
 
@@ -72,7 +72,7 @@ util.moveToOtherWordPoint = function(mNode, toNode) {
 
 util.SoundClick = function () {
 	if (GM.soundClickUrl == null){
-        cc.loader.loadRes("audio/Common_Panel_Dialog_Pop_Sound", cc.AudioClip, function (err, clip) {
+        cc.loader.loadRes("audio/common/Common_Panel_Dialog_Pop_Sound", cc.AudioClip, function (err, clip) {
             cc.audioEngine.playEffect(clip, false);
             GM.soundClickUrl = clip
         });
@@ -108,6 +108,7 @@ util.loadUrlImg = function(node, picUrl) {
     cc.loader.load({url: picUrl, type: util.getSuffixName(picUrl)}, function (err, texTure) {
         let spriteFrame = new cc.SpriteFrame(texTure);
         node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+        // GM.hasLoadImg = 
     });
 };
 // 从父节点脱落 到新的节点去

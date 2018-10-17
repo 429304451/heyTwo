@@ -1,4 +1,4 @@
-var util = require("util");
+
 
 cc.Class({
     extends: cc.Component,
@@ -56,8 +56,8 @@ cc.Class({
             // var url = "http://127.0.0.1:8888/mImg?name="+self.head_id+".jpg"
             // util.loadUrlImg(self.img_head, url);
 
-            var cocos = cc.find("Canvas/cocos");
-            util.exto(cocos, self.img_head)
+            // var cocos = cc.find("Canvas/cocos");
+            // util.exto(cocos, self.img_head)
             // self.btn_my_info.unbindTouch();
         });
 
