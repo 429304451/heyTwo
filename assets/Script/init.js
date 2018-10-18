@@ -2,4 +2,3 @@
 window.util = require("util");
 require("uiFunc");
 require("initDatas")
-

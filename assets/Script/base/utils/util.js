@@ -46,18 +46,23 @@ util.mlog = function () {
 };
 
 util.loadSp = function (parent, path, childName, func) {
-	cc.loader.loadRes(path, cc.SpriteFrame, function(err, spriteFrame){ 
-		var node = new cc.Node("loadSp");
-		//调用新建的node的addComponent函数，会返回一个sprite的对象 
-		const sprite = node.addComponent(cc.Sprite);
-		//给sprite的spriteFrame属性 赋值  
-		sprite.spriteFrame = spriteFrame;
-		parent.addChild(node);
-		if (childName != null )
-			parent[childName] = node;
-		if (func != null )
-			func();
-	})
+    if (GM.hasLoadImg[fileName]) {
+
+    } else {
+        cc.loader.loadRes(path, cc.SpriteFrame, function(err, spriteFrame){ 
+            var node = new cc.Node("loadSp");
+            //调用新建的node的addComponent函数，会返回一个sprite的对象 
+            const sprite = node.addComponent(cc.Sprite);
+            //给sprite的spriteFrame属性 赋值  
+            sprite.spriteFrame = spriteFrame;
+            parent.addChild(node);
+            if (childName != null )
+                parent[childName] = node;
+            if (func != null )
+                func();
+        })
+    }
+	
 };
 
 // 找到两个不同节点的相对相差位置 

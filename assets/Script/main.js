@@ -6,6 +6,8 @@ cc.Class({
     start () {
     	// console.log("main start");
     	// console.log("util.isChangweiTest", util.isChangweiTest);
-    	uiFunc.openUI("hall/uiHall");
+    	// uiFunc.openUI("hall/uiHall");
+
+    	uiFunc.openUI("sangong/uiSangong");
     },
 });
