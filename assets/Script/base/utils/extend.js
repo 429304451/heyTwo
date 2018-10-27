@@ -2,6 +2,7 @@
 // 定义一个全局变量 作为我开发游戏的常用管理
 window.GM = {}
 GM.hasLoadImg = {};
+GM.hasLoadSound = {};
 
 cc.Node.prototype.to = function(father, zorder, tag) {
     zorder = zorder || 0;
@@ -43,8 +44,8 @@ cc.Node.prototype.pp = function(pxOrCcp, py) {
     this.setPosition(pw*px, ph*py);
     return this;
 };
-
-cc.Node.prototype.unbindTouch = function(args) {
+// 取消点击绑定
+cc.Node.prototype.unbindTouch = function() {
     this.off(cc.Node.EventType.TOUCH_START);
     this.off(cc.Node.EventType.TOUCH_MOVE);
     this.off(cc.Node.EventType.TOUCH_END);
@@ -114,13 +115,14 @@ cc.Node.prototype.quickBt = function(fn, touchSilence, Shield) {
             this.setScale(this.BeganScale_);
             this.opacity = this.BeganOpacity_;
 
-            if (GM.soundClickUrl == null){
-                cc.loader.loadRes("audio/common/Common_Panel_Dialog_Pop_Sound", cc.AudioClip, function (err, clip) {
+            var fullPath = "audio/common/Common_Panel_Dialog_Pop_Sound";
+            if (GM.hasLoadSound[fullPath] == null) {
+                cc.loader.loadRes(fullPath, cc.AudioClip, function (err, clip) {
                     cc.audioEngine.playEffect(clip, false);
-                    GM.soundClickUrl = clip
+                    GM.hasLoadSound[fullPath] = clip;
                 });
             } else {
-                cc.audioEngine.playEffect(GM.soundClickUrl, false);
+                cc.audioEngine.playEffect(GM.hasLoadSound[fullPath], false);
             }
         
         };
@@ -137,6 +139,26 @@ cc.Node.prototype.quickBt = function(fn, touchSilence, Shield) {
     }, this);
 
     return this;
+};
+
+cc.Node.prototype.onClick = function(func,target){
+    if(this.getComponent(cc.Button)==null){
+        let button=this.addComponent(cc.Button);
+        button.transition = cc.Button.Transition.SCALE;
+    }
+    const CD_TIME = 300;
+    let LAST_CLICK_TIME = 0;
+    let closure = function(){
+        let now = new Date().getTime();
+        if(now - LAST_CLICK_TIME < CD_TIME )
+        {
+            console.log("---屏蔽过快点击---");
+            return;
+        }
+        LAST_CLICK_TIME = now;
+        func();
+    }
+    this.on("click",closure,target);
 };
 
 cc.Node.prototype.delayCall = function(func, delayTime, bRepeat) {

@@ -19,7 +19,6 @@ cc.Class({
         arg["ip"] = "127.0.0.1";
         arg["port"] = "1236";
         arg["uuid"] = "xxx";
-
         app.runMain(arg.userid, arg.ip, arg.port, arg.uuid);
     },
 

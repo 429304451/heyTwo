@@ -3,9 +3,9 @@
  */
 
 var ClientUserItem = cc.Class({
+    name: "ClientUserItem",
+
     properties: {
-        _className: "ClientUserItem",
-        
         userID: null,
         gameID: null,
         tableID: null,
@@ -19,29 +19,23 @@ var ClientUserItem = cc.Class({
         otherInfo: null,  
     },
 
-                              //其它信息
-    ctor: function () {
-        
-    },
-
     init: function(userInfo) {
-        this.userID = userInfo.userID;
-        this.gameID = userInfo.gameID;
-        this.tableID = userInfo.tableID;
-        this.chairID = userInfo.chairID;
-        this.faceID = userInfo.faceID;
+        this.userID   = userInfo.userID;
+        this.gameID   = userInfo.gameID;
+        this.tableID  = userInfo.tableID;
+        this.chairID  = userInfo.chairID;
+        this.faceID   = userInfo.faceID;
         this.nickname = userInfo.nickname;
-        this.sex = userInfo.sex;
-        this.score = userInfo.score;
-        this.userStatus = userInfo.userStatus;
+        this.sex      = userInfo.sex;
+        this.score    = userInfo.score;
+        this.userStatus  = userInfo.userStatus;
         this.memberOrder = userInfo.memberOrder;
-        this.otherInfo = userInfo.otherInfo;            //其它信息
+        //其它信息
+        this.otherInfo   = userInfo.otherInfo;            
     },
-
     /*
      * 属性信息
      */
-
     //用户性别
     getGender: function () {
         return this.sex;
@@ -54,7 +48,6 @@ var ClientUserItem = cc.Class({
     getGameID: function () {
         return this.gameID;
     },
-
     //头像ID
     getFaceID: function () {
         return this.faceID;
@@ -63,7 +56,6 @@ var ClientUserItem = cc.Class({
     getNickname: function () {
         return this.nickname;
     },
-
 
     //用户桌子
     getTableID: function () {

@@ -6,55 +6,23 @@
 /** @expose */
 window.io;
 
+var GameUserManager = require("GameUserManager");
+
 var SocketIO = SocketIO || window.io;
 
-// window.ClientKernel = cc.Class({
-//     _className: "ClientKernel",
-//     name: 'ClientKernel',
-//     // extends: cc.CardinalSplineBy,
-
-//     ctor: function() {
-        
-//     },
-// });
-
-// var ClientKernel = cc.Class({
-//     // extends: baseNode,
-//     name: "ClientKernel",
-//     properties: {
-//         // _className: "ClientKernel",
-//     },
-
-//     ctor () {
-
-//     },
-    
-// });
-
-window.ClientKernel = cc.Class({
+var ClientKernel = cc.Class({
 
     properties: {
-        _className: "ClientKernel",
-        _classPath: "src/core/ClientKernel.js",
-
         webSocket: null,
         gameUserManager: null,
         gameEngine: null,
         gameStatus: null,
         myUserItem: null,
         myUserID: null,
-        serverReady: false,          //服务端是否准备好, 当成功触发onReady后， 就会重置为false， 防止重复触发
+        serverReady: false,         //服务端是否准备好, 当成功触发onReady后， 就会重置为false， 防止重复触发
         clientReady: false,         //客户端是否准备好，当成功触发onReady后， 就会重置为false， 防止重复触发
         loginSuccess: false,        //登录是否成功
         uuid: null,
-    },
-
-    // ctor: function (userID, uuid) {
-    //     this.gameUserManager = new GameUserManager(this);
-    //     this.myUserID = userID;
-    //     this.uuid = uuid;
-    // },
-    ctor: function () {
 
     },
 
@@ -65,7 +33,6 @@ window.ClientKernel = cc.Class({
     },
 
     webSocketSend: function (data) {
-
         if(this.webSocket == null)
             return;
 
@@ -95,21 +62,20 @@ window.ClientKernel = cc.Class({
         //设置游戏引擎
         this.setGameEngine(gameEngine);
 
-
         //链接事件
         this.webSocket.on("connect", function (data) {
-            cc.log("iii 连接成功");
+            cc.log("连接成功 connect");
             self.onEventConnect(data);
         });
         //断开事件
         this.webSocket.on("disconnect", function () {
-            cc.log("iii 断开连接");
+            cc.log("断开连接 disconnect");
             self.onEventDisconnect();
             self.webSocket = null;
         });
         //错误消息
         this.webSocket.on("error", function (error) {
-            cc.log(error.stack);
+            cc.log("错误消息", error.stack);
             self.onEventDisconnect();
             self.webSocket = null;
         });
@@ -117,7 +83,7 @@ window.ClientKernel = cc.Class({
         this.webSocket.on("message", function (data) {
             if(cc.sys.isNative)
                 data = JSON.parse(data);
-
+            console.log("通信消息", data["data"]);
             self.onEventMessage(data);
         });
     },
@@ -127,10 +93,8 @@ window.ClientKernel = cc.Class({
      * @param gameEngine
      */
     setGameEngine: function (gameEngine) {
-
         this.gameEngine = gameEngine;
         this.gameEngine.setClientKernel(this);
-
     },
 
     /**

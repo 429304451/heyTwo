@@ -1,5 +1,6 @@
 var GameLogic = require("GameLogic");
 var GameEngine = require("GameEngine");
+var ClientKernel = require("ClientKernel");
 
 window.GD = {
 	gameEngine: null,               //游戏场景
@@ -25,6 +26,7 @@ window.app = {
         clientKernel.init(this.plazaArgs.userID, this.plazaArgs.uuid);
 
         var gameEngine = new GameEngine();
+        gameEngine.init();
 
         clientKernel.startConnect(URL, gameEngine);
 

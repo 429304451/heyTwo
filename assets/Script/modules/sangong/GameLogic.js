@@ -1,7 +1,7 @@
 
 
 //扑克逻辑操作
-function GameLogic(){
+function GameLogic() {
     this.LOGIC_MASK_COLOR 	= 0xF0;   	//花色掩码
     this.LOGIC_MASK_VALUE 	= 0x0F;		//数值掩码
     this.MAX_COUNT        	= 5;

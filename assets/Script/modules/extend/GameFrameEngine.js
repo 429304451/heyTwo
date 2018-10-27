@@ -2,13 +2,9 @@
  * Created by Administrator on 2015/7/10.
  */
 var GameFrameEngine = cc.Class({
+
     properties: {
-        
-    	// _className: "GameFrameEngine",
-    	// _classPath: "src/core/GameFrameEngine.js",
         clientKernel: null,
-    },
-    ctor: function () {
     },
 
     setClientKernel: function (clientKernel) {
@@ -22,16 +18,10 @@ var GameFrameEngine = cc.Class({
         }
         this.clientKernel.stopWebSocket();
     },
-
-    /*
-     * 发送消息
-     */
+    //发送消息
     sendSocketData: function (subCMD, data) {
-
         this.clientKernel.sendSocketData(gameCMD.MDM_GF_GAME, subCMD, data);
     },
-
-
     //游戏消息
     onEventGameMessage: function (subCMD, data) {
         return true;
@@ -51,22 +41,27 @@ var GameFrameEngine = cc.Class({
 
     //用户进入
     onEventUserEnter: function (userItem) {
+        console.log("用户进入", userItem);
         return true;
     },
     //用户离开
     onEventUserLeave: function (userItem) {
+        console.log("用户离开", userItem);
         return true;
     },
     //用户分数变更
     onEventUserScore: function (userItem) {
+        console.log("用户分数变更", userItem);
         return true;
     },
     //用户状态变更
     onEventUserStatus: function (userItem) {
+        console.log("用户状态变更", userItem);
         return true;
     },
     //用户自己进入
     onEventSelfEnter: function (userItem) {
+        console.log("用户自己进入", userItem);
         return true;
     },
     //获取桌子玩家信息
@@ -89,17 +84,15 @@ var GameFrameEngine = cc.Class({
     getMeUserItem: function () {
         return this.clientKernel.getMeUserItem();
     },
-
-
     getMeChairID: function () {
         return this.clientKernel.getMeChairID();
     },
-
 
     /**
      * 发送用户准备
      * @returns {*}
      */
+
     sendUserReady: function () {
         return this.clientKernel.sendUserReady();
     },
@@ -113,6 +106,6 @@ var GameFrameEngine = cc.Class({
      * 断开连接
      */
     onEventDisconnect: function () {
-
+        console.log("断开连接");
     }
 });

@@ -2,23 +2,11 @@
  * Created by Administrator on 2015/7/10.
  */
 
-window.GameUserManager = cc.Class({
+var GameUserManager = cc.Class({
 	properties: {
-        _className: "GameUserManager",
+        // _className: "GameUserManager",
         tableUserItem: [],
         clientKernel: null,
-    },
-
-    ctor: function () {
-        // clientKernel
-        // _className: "GameUserManager",
-        // _classPath: "src/core/GameUserManager.js",
-
-        // tableUserItem = null,
-        // clientKernel = null,
-
-        // this.tableUserItem = [];
-        // this.clientKernel = clientKernel;
     },
 
     init: function(clientKernel) {

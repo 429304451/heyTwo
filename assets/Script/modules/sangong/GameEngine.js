@@ -1,12 +1,15 @@
 /**
  * Created by Administrator on 2015/7/3.
  */
+var GameFrameEngine = require("GameFrameEngine");
+
 
 //游戏逻辑引擎
-var GameEngine = GameFrameEngine.extend({
+var GameEngine = cc.Class({
+    extends: GameFrameEngine,
 
     properties: {
-    	_className: "GameEngine",
+    	// _className: "GameEngine",
     	// _classPath: "src/GameEngine.js",
 
         kickData: null,   //服务端发送的 KICK_TYPE 类型消息的暂存
@@ -16,21 +19,12 @@ var GameEngine = GameFrameEngine.extend({
         checkAutoLeave: false,      //检测是否自动离开
     },
 
-    ctor: function () {
-        // this._super();
-
-        this.init();
-    },
-
-
     init: function () {
         this.player = [];
         for (var i = 0; i < gameConst.GAME_PLAYER_NUM; ++i) {
             this.player[i] = new Player(i);
         }
     },
-
-
 
     reset: function () {
         this.resetPlayer();
